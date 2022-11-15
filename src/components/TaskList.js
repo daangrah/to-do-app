@@ -3,15 +3,10 @@ import '../App.css'
 import Delete from './assets/delete.png'
 import DeleteFill from './assets/delete-filled.png'
 
-const TaskList = ({task, tasks, setTasks}) => {
+const TaskList = ({task, deleteHandler, tasks, setTasks}) => {
     const [img, setImg] = useState({
         src: Delete
     })
-    const handlerDelete = () => {
-        tasks.forEach(function (el, i){
-            if(el.id === task.id) {tasks.splice(i,1)}
-            setTasks([...tasks])
-    })}
     return (
         <div className="taskBox" id={task.id}>
             <label>
@@ -21,7 +16,7 @@ const TaskList = ({task, tasks, setTasks}) => {
             <img src={img.src} alt='delete' className={'delete-icon'}
             onMouseEnter={()=>{setImg({src: DeleteFill})}}
             onMouseLeave={()=>setImg({src: Delete})}
-            onClick={handlerDelete}/>
+            onClick={deleteHandler}/>
         </div>
     );
 };

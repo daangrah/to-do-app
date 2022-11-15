@@ -32,9 +32,10 @@ h1{
     display: grid;
     justify-content: center;
     background-color: #537072;
+    justify-items: center;
 }
 .taskBox{
-    width: 350px;
+    width: 200%;
     display: flex;
     justify-content: space-around;
     align-items: center;

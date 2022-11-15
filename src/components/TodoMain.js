@@ -6,10 +6,10 @@ import '../App.css'
 
 const TodoMain = () => {
     const [tasks, setTasks] = useState([])
-    const addTodo = (text) =>{
+    const addTodo = (text) => {
         const id = nanoid();
         const newTask = {id, text};
-        setTasks((prev)=>[newTask, ...prev ]);
+        setTasks((prev) => [newTask, ...prev]);
     }
     return (
         <div>
@@ -18,7 +18,11 @@ const TodoMain = () => {
             <div className="tasks">
             {tasks.map((item) => (
                 <TaskList task={item} key={item.id}
-                tasks={tasks} setTasks={setTasks}/>))}
+                deleteHandler={() => {
+                    const newTasks = tasks.filter(function (el){
+                        return el.id !== item.id
+                    })
+                    setTasks([...newTasks])}}/>))}
             </div>
         </div>
     );
