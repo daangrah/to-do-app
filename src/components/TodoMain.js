@@ -17,7 +17,8 @@ const TodoMain = () => {
 
             <div className="tasks">
             {tasks.map((item) => (
-                <TaskList task={item} key={item.id}/>))}
+                <TaskList task={item} key={item.id}
+                tasks={tasks} setTasks={setTasks}/>))}
             </div>
         </div>
     );
