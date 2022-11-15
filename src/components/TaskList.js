@@ -10,8 +10,7 @@ const TaskList = ({task, tasks, setTasks}) => {
     const handlerDelete = () => {
         tasks.forEach(function (el, i){
             if(el.id === task.id) {tasks.splice(i,1)}
-            setTasks(tasks)
-            console.log(tasks)
+            setTasks([...tasks])
     })}
     return (
         <div className="taskBox" id={task.id}>
