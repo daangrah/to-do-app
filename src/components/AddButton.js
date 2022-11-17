@@ -1,5 +1,4 @@
 import React from 'react';
-import '../App.css'
 
 const AddButton = (props) =>{
     function AddHandler(){
@@ -10,7 +9,7 @@ const AddButton = (props) =>{
 
     }
     return (
-        <button className="addButton" type="button" onClick={AddHandler}>
+        <button type="button" onClick={AddHandler}>
             ADD
         </button>
     );
