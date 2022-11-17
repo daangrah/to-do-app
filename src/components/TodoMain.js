@@ -22,12 +22,8 @@ const TodoMain = () => {
 
             <div className="tasks">
             {tasks.map((item) => (
-<<<<<<< HEAD
                 <TaskList task={item} key={item.id}
                 deleteHandler={handlerDelete}/>))}
-=======
-                <TaskList task={item} key={item.id}/>))}
->>>>>>> parent of a8296a4 (delete butt and styles)
             </div>
         </div>
     );
