@@ -7,6 +7,9 @@ const TaskList = ({task, deleteHandler, tasks, setTasks}) => {
     const [img, setImg] = useState({
         src: Delete
     })
+    const deleted = () => {
+        deleteHandler(task.id)
+    }
     return (
         <div className="taskBox" id={task.id}>
             <label>
@@ -16,7 +19,7 @@ const TaskList = ({task, deleteHandler, tasks, setTasks}) => {
             <img src={img.src} alt='delete' className={'delete-icon'}
             onMouseEnter={()=>{setImg({src: DeleteFill})}}
             onMouseLeave={()=>setImg({src: Delete})}
-            onClick={deleteHandler}/>
+            onClick={deleted}/>
         </div>
     );
 };
